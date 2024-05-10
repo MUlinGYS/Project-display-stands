@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CHenK-项目展示架</title>
+    </title>
+    <link href="https://cdn.bootcss.com/font-awesome/5.8.0/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <style>
+        /* loading */
+        .middle1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .bar {
+            width: 6px;
+            height: 2px;
+            background: white;
+            display: inline-block;
+            transform-origin: bottom center;
+            animation: loading 1.5s ease-in-out infinite;
+        }
+
+        .bar1 {
+            animation-delay: 0.1s;
+        }
+
+        .bar2 {
+            animation-delay: 0.2s;
+        }
+
+        .bar3 {
+            animation-delay: 0.3s;
+        }
+
+        .bar4 {
+            animation-delay: 0.4s;
+        }
+
+        .bar5 {
+            animation-delay: 0.5s;
+        }
+
+        .bar6 {
+            animation-delay: 0.6s;
+        }
+
+        .bar7 {
+            animation-delay: 0.7s;
+        }
+
+        .bar8 {
+            animation-delay: 0.8s;
+        }
+
+        @keyframes loading {
+            0% {
+                transform: scaleY(0.1);
+                background: #fff;
+            }
+
+            50% {
+                transform: scaleY(30);
+                background: #2ecc71;
+            }
+
+            100% {
+                transform: scaleY(0.1);
+                background: transparent;
+            }
+        }
+
+        /* main */
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'montserrat', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #333;
+        }
+
+        /* index */
+        .services-section {
+            background: #333;
+            background-size: cover;
+            padding: 60px 0;
+        }
+
+        .inner-width {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+            overflow: hidden;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #ddd;
+            text-transform: uppercase;
+            font-size: 30px;
+        }
+
+        .border {
+            width: 160px;
+            height: 2px;
+            background: #82ccdd;
+            margin: 40px auto;
+        }
+
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .service-box {
+            max-width: 33.33%;
+            padding: 10px;
+            text-align: center;
+            color: #ddd;
+            cursor: pointer;
+        }
+
+        .service-icon {
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            border: 3px solid #82ccdd;
+            color: #82ccdd;
+            transform: rotate(45deg);
+            margin-bottom: 30px;
+            margin-top: 16px;
+            transition: 0.3s linear;
+        }
+
+        .service-icon i {
+            line-height: 70px;
+            transform: rotate(-45deg);
+            font-size: 26px;
+        }
+
+        .service-box:hover .service-icon {
+            background: #82ccdd;
+            color: #ddd;
+        }
+
+        .service-title {
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .service-desc {
+            font-size: 14px;
+            text-align: justify;
+        }
+
+        @media screen and (max-width: 960px) {
+            .service-box {
+                max-width: 45%;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .service-box {
+                max-width: 50%;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .service-box {
+                max-width: 100%;
+            }
+        }
+
+        /* footer */
+        .footer-1 {
+            background-color: rgb(34, 34, 34);
+        }
+
+        .footer-1 .media-container-row {
+            padding-top: 10px;
+            padding-right: 0px;
+            padding-bottom: 10px;
+            padding-left: 0px;
+            width: 100%;
+            color: rgb(122, 122, 122);
+        }
+
+        .footer-1 a {
+            color: rgb(255, 255, 255);
+            text-decoration-line: none;
+            text-decoration-thickness: initial;
+            text-decoration-style: initial;
+            text-decoration-color: initial;
+        }
+
+        p {
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+
+        .align-center {
+            text-align: center;
+        }
+
+        .footer-1 .mbr-text {
+            font-size: 14px;
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Roboto, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Microsoft Jhenghei", sans-serif;
+        }
+
+        /* 状态显示 */
+        #loading {
+            display: block;
+        }
+
+        #index {
+            display: none;
+        }
+
+        /* 社交按钮 */
+        .middle2 {
+            /* position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+
+        .btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70px;
+            height: 70px;
+            background: #414141;
+            margin: 10px 10px;
+            border-radius: 30%;
+            box-shadow: 0 5px 15px -5px #00000070;
+            color: #3498db;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+        }
+
+        .btn i {
+            line-height: 90px;
+            font-size: 26px;
+            transition: 0.2s linear;
+        }
+
+        .btn:hover i {
+            transform: scale(1.3);
+            color: #f1f1f1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            background: #3498db;
+            transform: rotate(45deg);
+            left: -110%;
+            top: 90%;
+        }
+
+        .btn:hover::before {
+            animation: flash 0.7s 1;
+            top: -10%;
+            left: -10%;
+        }
+
+        @keyframes flash {
+            0% {
+                left: -100%;
+                top: 90%;
+            }
+
+            50% {
+                left: 10%;
+                top: -30%;
+            }
+
+            100% {
+                left: -10%;
+                top: -10%;
+            }
+        }
+
+        /* 弹出框 */
+        /* 遮罩层 */
+        #overlay {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            font-size: 16px;
+            /* IE9以下不支持rgba模式 */
+            background-color: rgba(0, 0, 0, 0.5);
+            /* 兼容IE8及以下 */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000, endColorstr=#7f000000);
+            display: none;
+        }
+
+        /* 弹出框主体 */
+        .popup {
+            background-color: #ffffff;
+            max-width: 400px;
+            min-width: 200px;
+            height: 240px;
+            border-radius: 5px;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        /* 弹出框的标题 */
+        .popup_title {
+            height: 60px;
+            line-height: 60px;
+            border-bottom: solid 1px #cccccc;
+        }
+
+        /* 弹出框的内容 */
+        .popup_content {
+            height: 50px;
+            line-height: 50px;
+            padding: 15px 20px;
+        }
+
+        /* 弹出框的按钮栏 */
+        .popup_btn {
+            padding-bottom: 10px;
+        }
+
+        /* 弹出框的按钮 */
+        .popup_btn button {
+            color: #778899;
+            width: 40%;
+            height: 40px;
+            cursor: pointer;
+            border: solid 1px #cccccc;
+            border-radius: 5px;
+            margin: 5px 10px;
+            color: #ffffff;
+            background-color: #337ab7;
+        }
+
+        /* 去除herf出现的样式 */
+        a {
+            color: inherit;
+            /* 将颜色设置为继承自其父元素的颜色 */
+            text-decoration: none;
+            /* 移除下划线 */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loading">
+        <div class="middle1">
+            <div class="bar bar1"></div>
+            <div class="bar bar2"></div>
+            <div class="bar bar3"></div>
+            <div class="bar bar4"></div>
+            <div class="bar bar5"></div>
+            <div class="bar bar6"></div>
+            <div class="bar bar7"></div>
+            <div class="bar bar8"></div>
+        </div>
+    </div>
+
+    <div id="index">
+        <div class="services-section">
+            <div class="inner-width">
+                <h1 class="section-title">我的项目</h1>
+                <div class="border"></div>
+                <div class="services-container">
+                    <div class="service-box">
+                        <a href="https://chenkaideboke.zeabur.app">
+                            <div class="service-icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                        </a>
+                        <a href="https://chenkaideboke.zeabur.app">
+                            <div class="service-title">ChKai 个人博客</div>
+                        </a>
+                        <div class="service-desc" style="word-break: break-all;">
+                            这是基于 Vue 3 + Vite 的个人博客项目，除基础库外,使用 Element Plus
+                            UI组件库,用于构建优雅的用户界面。使用Axios进行数据请求,通过json-server提供模拟后端服务,同时开发中引入vue-ueditor-wrap富文本编辑器组件来增强内容展示。选择了Less作为CSS预处理语言。在管理用户信息方面,项目选择了两个cookie操作库js-cookie和vue3-cookies
+                        </div>
+                    </div>
+                    <div class="service-box">
+                        <a href="https://chenkaideknow.zeabur.app/">
+                            <div class="service-icon">
+                                <i class="fas fa-brush"></i>
+                            </div>
+                        </a>
+                        <a href="https://chenkaideknow.zeabur.app/">
+                            <div class="service-title">CHenK 学习笔记</div>
+                        </a>
+                        <div class="service-desc">
+                            这个一个纯HTML制作的网站,使用Bootstrap和Custom-Navbar框架帮助布局和样式的设计,同时也使用了一些JavaScript的库和插件,如jQuery和Canvas-Nest.js来提升页面的交互体验。并且通过templatemo-style和监视浏览器窗口的变化进行部分的响应式开发
+                        </div>
+                    </div>
+                    <div class="service-box">
+                        <a href="https://knowbase.zeabur.app/">
+                            <div class="service-icon">
+                                <i class="fas fa-object-ungroup"></i>
+                            </div>
+                        </a>
+                        <a href="https://knowbase.zeabur.app/">
+                            <div class="service-title">学习笔记前台后台二合一系统</div>
+                        </a>
+                        <div class="service-desc">
+                            这是一个在Vue 3 + TS构建的web应用程序。使用一系列的常见依赖项,如Axios,用于处理HTTP请求;Echarts,用于数据可视化;Element
+                            Plus UI库,提供了丰富的Vue组件;Vuex为组件提供通信;Vue
+                            Router为Vue应用程序提供了路由功能。并通过重定向和别名将前台与后台合并在一起。在代码规范化上通过prettierrc进行格式化规范化
+                        </div>
+                    </div>
+                    <div class="service-box">
+                        <a href="https://datav-echarts.zeabur.app/#/">
+                            <div class="service-icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                        </a>
+                        <a href="https://datav-echarts.zeabur.app/#/">
+                            <div class="service-title">智慧中心大屏</div>
+                        </a>
+                        <div class="service-desc">
+                            这是一个基于Vue2 + Echarts + DataV制作的大屏项目, 主要实现了一些常用的图表展示功能，如柱状图、折线图、饼图、雷达图、仪表盘等。
+                        </div>
+                    </div>
+                    <div class="service-box">
+                        <a href="https://admin-interface.zeabur.app/">
+                            <div class="service-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                        </a>
+                        <a href="https://admin-interface.zeabur.app/">
+                            <div class="service-title">通用 后台管理系统</div>
+                        </a>
+                        <div class="service-desc">
+                            这是一个Vue2通用后台管理系统项目,通过Mock.js和json-server提供模拟后端服务,Less作为CSS预处理语言,使用Vuex进行组件间的通信处理多项数据处理,在Axios做数据拦截处理,在vue.config.js内做请求代理
+                        </div>
+                    </div>
+                    <div class="service-box">
+                        <a href="https://bilibili-imitation.zeabur.app/">
+                            <div class="service-icon">
+                                <i class="fab fa-android"></i>
+                            </div>
+                        </a>
+                        <a href="https://bilibili-imitation.zeabur.app/">
+                            <div class="service-title">仿制 bilibili首页</div>
+                        </a>
+                        <div class="service-desc">
+                            一个HTML转Vue项目,通过JS实现轮播图,主要做一个JS和CSS的练习用
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="middle2">
+            <a class="btn" href="https://github.com/MUlinGYS">
+                <i class="fab fa-github"></i>
+            </a>
+            <a class="btn" onclick="showPopup('暂未开通','微博')">
+                <i class="fab fa-weibo"></i>
+            </a>
+            <a class="btn" onclick="showPopup('CK25he469','微信')">
+                <i class="fab fa-weixin"></i>
+            </a>
+            <a class="btn" onclick="showPopup(3069394597,'QQ')">
+                <i class="fab fa-qq"></i>
+            </a>
+
+            <a class="btn" href="https://space.bilibili.com/351145233">
+                <i class="fab fa-twitch"></i>
+            </a>
+        </div>
+
+        <section class="footer-1">
+            <div class="container">
+                <div class="media-container-row align-center">
+                    <div class="col-12">
+                        <p class="mbr-text">
+                            © Personally owned 2024 <a href="https://htmlpage.cn">CHenK</a> - All produced by the author
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 弹出框 -->
+    <div id="overlay">
+        <div class="popup">
+            <p class="popup_title"></p>
+            <p class="popup_content"></p>
+            <div class="popup_btn">
+                <button class="cancelBtn" onclick="hidePopup()">取消</button>
+                <button class="confirmBtn" onclick="hidePopup()">确认</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    setTimeout(function () {
+        document.getElementById("loading").style.display = 'none';
+        document.getElementById("index").style.display = 'block';
+    }, 100); // 3000表示3000毫秒，即3秒。
+
+    function showPopup(number, title) {
+        var overlay = document.getElementById("overlay");
+        // 选择弹出框中的内容元素，并将number值设置为其文本内容
+        var popupTitle = document.querySelector(".popup_title");
+        var popupContent = document.querySelector(".popup_content");
+        popupTitle.textContent = title;
+        popupContent.textContent = number;
+        overlay.style.display = "block";
+    }
+    function hidePopup() {
+        var overlay = document.getElementById("overlay");
+        overlay.style.display = "none";
+    }
+
+</script>
+
+</html>
